@@ -1,202 +1,218 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://dw5pkq8qy5g1i"]
 
-[ext_resource path="res://addons/admob/scripts/AdMobConfig.gd" type="Script" id=1]
-[ext_resource path="res://addons/admob/assets/fonts/orange_juice_2_0.ttf" type="DynamicFontData" id=2]
+[ext_resource type="Script" path="res://addons/admob/scripts/AdMobConfig.gd" id="1"]
+[ext_resource type="FontData" path="res://addons/admob/assets/fonts/orange_juice_2_0.ttf" id="2"]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id="1"]
 draw_center = false
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.25098, 0.52549, 0.956863, 1 )
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(0.25098, 0.52549, 0.956863, 1)
 
-[sub_resource type="DynamicFont" id=3]
-size = 36
-use_filter = true
-font_data = ExtResource( 2 )
+[sub_resource type="Font" id="3"]
+data/0 = ExtResource( "2" )
 
 [node name="AdMobConfig" type="Control"]
-pause_mode = 2
 anchor_right = 1.144
 anchor_bottom = 1.00111
-margin_bottom = -6.10352e-05
 rect_clip_content = true
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 1 )
+script = ExtResource( "1" )
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-margin_right = 14.0
-margin_bottom = 14.0
-custom_styles/panel = SubResource( 1 )
+theme_override_styles/panel = SubResource( "1" )
+script = null
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-margin_right = 532.0
-margin_bottom = 497.0
+offset_right = 596.0
+offset_bottom = 654.0
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TopPanel" type="Panel" parent="PanelContainer/VBoxContainer"]
-margin_right = 532.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 0, 40 )
-custom_styles/panel = SubResource( 2 )
+offset_right = 596.0
+offset_bottom = 40.0
+rect_min_size = Vector2(0, 40)
+theme_override_styles/panel = SubResource( "2" )
+script = null
 
 [node name="CurrentVersion" type="Label" parent="PanelContainer/VBoxContainer/TopPanel"]
 anchor_bottom = 1.0
-margin_right = 88.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.984314, 0.741176, 0, 1 )
-text = "Version: 0.4.1"
+theme_override_colors/font_color = Color(0.984314, 0.741176, 0, 1)
+theme_override_fonts/font = SubResource( "3" )
+text = "Version: 0.4.2"
+structured_text_bidi_override_options = []
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Enabled" type="CheckBox" parent="PanelContainer/VBoxContainer"]
-margin_top = 44.0
-margin_right = 532.0
-margin_bottom = 68.0
+offset_top = 44.0
+offset_right = 596.0
+offset_bottom = 75.0
 pressed = true
 text = "Enabled"
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Real" type="CheckBox" parent="PanelContainer/VBoxContainer"]
-margin_top = 72.0
-margin_right = 532.0
-margin_bottom = 96.0
+offset_top = 79.0
+offset_right = 596.0
+offset_bottom = 110.0
 text = "Real"
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TestEuropeUserConsent" type="CheckBox" parent="PanelContainer/VBoxContainer"]
-margin_top = 100.0
-margin_right = 532.0
-margin_bottom = 124.0
+offset_top = 114.0
+offset_right = 596.0
+offset_bottom = 145.0
 pressed = true
 text = "Test Europe User Consent"
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BannerShowInstantly" type="CheckBox" parent="PanelContainer/VBoxContainer"]
-margin_top = 128.0
-margin_right = 532.0
-margin_bottom = 152.0
+offset_top = 149.0
+offset_right = 596.0
+offset_bottom = 180.0
 pressed = true
 text = "Show Banner Instantly"
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BannerSizeHBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 156.0
-margin_right = 532.0
-margin_bottom = 176.0
+offset_top = 184.0
+offset_right = 596.0
+offset_bottom = 213.0
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer/BannerSizeHBoxContainer"]
-margin_top = 3.0
-margin_right = 75.0
-margin_bottom = 17.0
+offset_top = 1.0
+offset_right = 90.0
+offset_bottom = 27.0
 text = "Banner Size"
+structured_text_bidi_override_options = []
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BannerSize" type="OptionButton" parent="PanelContainer/VBoxContainer/BannerSizeHBoxContainer"]
-margin_left = 79.0
-margin_right = 161.0
-margin_bottom = 20.0
+offset_left = 94.0
+offset_right = 190.0
+offset_bottom = 29.0
 text = "BANNER"
-items = [ "BANNER", null, false, 0, null, "MEDIUM_RECTANGLE", null, false, 1, null, "FULL_BANNER", null, false, 2, null, "LEADERBOARD", null, false, 3, null, "ADAPTIVE", null, false, 4, null, "SMART_BANNER", null, false, 5, null ]
+items = ["BANNER", null, false, 0, null, "MEDIUM_RECTANGLE", null, false, 1, null, "FULL_BANNER", null, false, 2, null, "LEADERBOARD", null, false, 3, null, "ADAPTIVE", null, false, 4, null, "SMART_BANNER", null, false, 5, null]
 selected = 0
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BannerOnTop" type="CheckBox" parent="PanelContainer/VBoxContainer"]
-margin_top = 180.0
-margin_right = 532.0
-margin_bottom = 204.0
+offset_top = 217.0
+offset_right = 596.0
+offset_bottom = 248.0
 text = "Banner On Top"
+script = null
 
 [node name="ChildDirectedTreatment" type="CheckBox" parent="PanelContainer/VBoxContainer"]
-margin_top = 208.0
-margin_right = 532.0
-margin_bottom = 232.0
+offset_top = 252.0
+offset_right = 596.0
+offset_bottom = 283.0
 pressed = true
 text = "Child Directed Treatment"
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MaxAdContentRating" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 236.0
-margin_right = 532.0
-margin_bottom = 256.0
+offset_top = 287.0
+offset_right = 596.0
+offset_bottom = 316.0
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Key" type="Label" parent="PanelContainer/VBoxContainer/MaxAdContentRating"]
-margin_top = 3.0
-margin_right = 132.0
-margin_bottom = 17.0
+offset_top = 1.0
+offset_right = 163.0
+offset_bottom = 27.0
 text = "MaxAdContentRating"
+structured_text_bidi_override_options = []
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Value" type="OptionButton" parent="PanelContainer/VBoxContainer/MaxAdContentRating"]
-margin_left = 136.0
-margin_right = 175.0
-margin_bottom = 20.0
+offset_left = 167.0
+offset_right = 208.0
+offset_bottom = 29.0
 text = "G"
-items = [ "G", null, false, 0, null, "PG", null, false, 1, null, "T", null, false, 2, null, "MA", null, false, 3, null ]
+items = ["G", null, false, 0, null, "PG", null, false, 1, null, "T", null, false, 2, null, "MA", null, false, 3, null]
 selected = 0
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="UnitIds" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 260.0
-margin_right = 532.0
-margin_bottom = 410.0
-rect_min_size = Vector2( 532, 150 )
+offset_top = 320.0
+offset_right = 596.0
+offset_bottom = 519.0
+rect_min_size = Vector2(532, 150)
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Description" type="Label" parent="PanelContainer/VBoxContainer/UnitIds"]
-margin_top = 68.0
-margin_right = 58.0
-margin_bottom = 82.0
+offset_top = 86.0
+offset_right = 69.0
+offset_bottom = 112.0
 text = "UNIT IDS"
+structured_text_bidi_override_options = []
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/VBoxContainer/UnitIds"]
-margin_left = 62.0
-margin_right = 532.0
-margin_bottom = 150.0
+offset_left = 73.0
+offset_right = 596.0
+offset_bottom = 199.0
 size_flags_horizontal = 3
 tab_align = 0
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -204,188 +220,199 @@ __meta__ = {
 [node name="Android" type="GridContainer" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
+offset_left = 4.0
+offset_top = 41.0
+offset_right = -4.0
+offset_bottom = -4.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 2
+script = null
 
 [node name="Key" type="Label" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer/Android"]
-margin_top = 5.0
-margin_right = 129.0
-margin_bottom = 19.0
+offset_top = 3.0
+offset_right = 155.0
+offset_bottom = 29.0
 text = "Banner"
+structured_text_bidi_override_options = []
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Banner" type="LineEdit" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer/Android"]
-margin_left = 133.0
-margin_right = 436.0
-margin_bottom = 24.0
+offset_left = 159.0
+offset_right = 515.0
+offset_bottom = 33.0
 text = "ca-app-pub-3940256099942544/6300978111"
 align = 1
 expand_to_text_length = true
 virtual_keyboard_enabled = false
+structured_text_bidi_override_options = []
+script = null
 
 [node name="Key2" type="Label" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer/Android"]
-margin_top = 33.0
-margin_right = 129.0
-margin_bottom = 47.0
+offset_top = 40.0
+offset_right = 155.0
+offset_bottom = 66.0
 text = "Interstitial"
+structured_text_bidi_override_options = []
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Interstitial" type="LineEdit" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer/Android"]
-margin_left = 133.0
-margin_top = 28.0
-margin_right = 436.0
-margin_bottom = 52.0
+offset_left = 159.0
+offset_top = 37.0
+offset_right = 515.0
+offset_bottom = 70.0
 text = "ca-app-pub-3940256099942544/1033173712"
 align = 1
 expand_to_text_length = true
 virtual_keyboard_enabled = false
+structured_text_bidi_override_options = []
+script = null
 
 [node name="Key3" type="Label" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer/Android"]
-margin_top = 61.0
-margin_right = 129.0
-margin_bottom = 75.0
+offset_top = 77.0
+offset_right = 155.0
+offset_bottom = 103.0
 text = "Rewarded"
+structured_text_bidi_override_options = []
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Rewarded" type="LineEdit" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer/Android"]
-margin_left = 133.0
-margin_top = 56.0
-margin_right = 436.0
-margin_bottom = 80.0
+offset_left = 159.0
+offset_top = 74.0
+offset_right = 515.0
+offset_bottom = 107.0
 text = "ca-app-pub-3940256099942544/5224354917"
 align = 1
 expand_to_text_length = true
 virtual_keyboard_enabled = false
+structured_text_bidi_override_options = []
+script = null
 
 [node name="Key4" type="Label" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer/Android"]
-margin_top = 89.0
-margin_right = 129.0
-margin_bottom = 103.0
+offset_top = 114.0
+offset_right = 155.0
+offset_bottom = 140.0
 text = "RewardedInterstitial"
+structured_text_bidi_override_options = []
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RewardedInterstitial" type="LineEdit" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer/Android"]
-margin_left = 133.0
-margin_top = 84.0
-margin_right = 436.0
-margin_bottom = 108.0
+offset_left = 159.0
+offset_top = 111.0
+offset_right = 515.0
+offset_bottom = 144.0
 text = "ca-app-pub-3940256099942544/5354046379"
 align = 1
 expand_to_text_length = true
 virtual_keyboard_enabled = false
+structured_text_bidi_override_options = []
+script = null
 
 [node name="iOS" type="GridContainer" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
+offset_left = 4.0
+offset_top = 41.0
+offset_right = -4.0
+offset_bottom = -4.0
 columns = 2
+script = null
 
 [node name="Key" type="Label" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer/iOS"]
-margin_top = 5.0
-margin_right = 129.0
-margin_bottom = 19.0
 text = "Banner"
+structured_text_bidi_override_options = []
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Banner" type="LineEdit" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer/iOS"]
-margin_left = 133.0
-margin_right = 436.0
-margin_bottom = 24.0
 text = "ca-app-pub-3940256099942544/2934735716"
 align = 1
 expand_to_text_length = true
 virtual_keyboard_enabled = false
+structured_text_bidi_override_options = []
+script = null
 
 [node name="Key2" type="Label" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer/iOS"]
-margin_top = 33.0
-margin_right = 129.0
-margin_bottom = 47.0
 text = "Interstitial"
+structured_text_bidi_override_options = []
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Interstitial" type="LineEdit" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer/iOS"]
-margin_left = 133.0
-margin_top = 28.0
-margin_right = 436.0
-margin_bottom = 52.0
 text = "ca-app-pub-3940256099942544/4411468910"
 align = 1
 expand_to_text_length = true
 virtual_keyboard_enabled = false
+structured_text_bidi_override_options = []
+script = null
 
 [node name="Key3" type="Label" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer/iOS"]
-margin_top = 61.0
-margin_right = 129.0
-margin_bottom = 75.0
 text = "Rewarded"
+structured_text_bidi_override_options = []
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Rewarded" type="LineEdit" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer/iOS"]
-margin_left = 133.0
-margin_top = 56.0
-margin_right = 436.0
-margin_bottom = 80.0
 text = "ca-app-pub-3940256099942544/1712485313"
 align = 1
 expand_to_text_length = true
 virtual_keyboard_enabled = false
+structured_text_bidi_override_options = []
+script = null
 
 [node name="Key4" type="Label" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer/iOS"]
-margin_top = 89.0
-margin_right = 129.0
-margin_bottom = 103.0
 text = "RewardedInterstitial"
+structured_text_bidi_override_options = []
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RewardedInterstitial" type="LineEdit" parent="PanelContainer/VBoxContainer/UnitIds/TabContainer/iOS"]
-margin_left = 133.0
-margin_top = 84.0
-margin_right = 436.0
-margin_bottom = 108.0
 text = "ca-app-pub-3940256099942544/6978759866"
 align = 1
 expand_to_text_length = true
 virtual_keyboard_enabled = false
+structured_text_bidi_override_options = []
+script = null
 
 [node name="SupportVersion" type="Label" parent="PanelContainer/VBoxContainer"]
-margin_top = 414.0
-margin_right = 532.0
-margin_bottom = 479.0
+offset_top = 523.0
+offset_right = 596.0
+offset_bottom = 627.0
 text = "Supported Plugin Versions:
 
 iOS: 1.1.x
 Android: 1.1.x"
+structured_text_bidi_override_options = []
+script = null
 
 [node name="InstallationTutorial" type="LinkButton" parent="PanelContainer/VBoxContainer"]
-margin_top = 483.0
-margin_right = 532.0
-margin_bottom = 497.0
+offset_top = 631.0
+offset_right = 596.0
+offset_bottom = 654.0
 text = "INSTALLATION TUTORIAL"
+structured_text_bidi_override_options = []
+script = null
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Enabled" to="." method="_on_Enabled_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Real" to="." method="_on_Real_pressed"]

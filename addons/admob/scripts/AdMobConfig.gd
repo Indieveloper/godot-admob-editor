@@ -1,22 +1,22 @@
-tool
-extends "util/Variables.gd"
+@tool
+extends "res://addons/admob/scripts/util/Variables.gd"
 
-onready var CurrentVersion := $PanelContainer/VBoxContainer/TopPanel/CurrentVersion
-onready var BannerSize := $PanelContainer/VBoxContainer/BannerSizeHBoxContainer/BannerSize
-onready var MaxAdContentRating := $PanelContainer/VBoxContainer/MaxAdContentRating/Value
-onready var Enabled := $PanelContainer/VBoxContainer/Enabled
-onready var Real := $PanelContainer/VBoxContainer/Real
-onready var TestEuropeUserConsent := $PanelContainer/VBoxContainer/TestEuropeUserConsent
-onready var BannerShowInstantly := $PanelContainer/VBoxContainer/BannerShowInstantly
-onready var BannerOnTop := $PanelContainer/VBoxContainer/BannerOnTop
-onready var ChildDirectedTreatment := $PanelContainer/VBoxContainer/ChildDirectedTreatment
-onready var Android = {
+@onready var CurrentVersion := $PanelContainer/VBoxContainer/TopPanel/CurrentVersion
+@onready var BannerSize := $PanelContainer/VBoxContainer/BannerSizeHBoxContainer/BannerSize
+@onready var MaxAdContentRating := $PanelContainer/VBoxContainer/MaxAdContentRating/Value
+@onready var Enabled := $PanelContainer/VBoxContainer/Enabled
+@onready var Real := $PanelContainer/VBoxContainer/Real
+@onready var TestEuropeUserConsent := $PanelContainer/VBoxContainer/TestEuropeUserConsent
+@onready var BannerShowInstantly := $PanelContainer/VBoxContainer/BannerShowInstantly
+@onready var BannerOnTop := $PanelContainer/VBoxContainer/BannerOnTop
+@onready var ChildDirectedTreatment := $PanelContainer/VBoxContainer/ChildDirectedTreatment
+@onready var Android = {
 	"Banner" : $PanelContainer/VBoxContainer/UnitIds/TabContainer/Android/Banner,
 	"Interstitial" : $PanelContainer/VBoxContainer/UnitIds/TabContainer/Android/Interstitial,
 	"Rewarded" : $PanelContainer/VBoxContainer/UnitIds/TabContainer/Android/Rewarded,
 	"RewardedInterstitial" : $PanelContainer/VBoxContainer/UnitIds/TabContainer/Android/RewardedInterstitial
 }
-onready var iOS = {
+@onready var iOS = {
 	"Banner" : $PanelContainer/VBoxContainer/UnitIds/TabContainer/iOS/Banner,
 	"Interstitial" : $PanelContainer/VBoxContainer/UnitIds/TabContainer/iOS/Interstitial,
 	"Rewarded" : $PanelContainer/VBoxContainer/UnitIds/TabContainer/iOS/Rewarded,

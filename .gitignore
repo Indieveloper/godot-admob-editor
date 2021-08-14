@@ -20,3 +20,5 @@ AdMobAddon.sln
 
 android/
 ios/
+
+.godot/

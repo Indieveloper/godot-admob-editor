@@ -1,28 +1,41 @@
 extends Control
 
-onready var EnableBanner : Button = $Background/TabContainer/AdFormats/VBoxContainer/Banner/EnableBanner
-onready var DisableBanner : Button = $Background/TabContainer/AdFormats/VBoxContainer/Banner/DisableBanner
-onready var ShowBanner : Button = $Background/TabContainer/AdFormats/VBoxContainer/Banner2/ShowBanner
-onready var HideBanner : Button = $Background/TabContainer/AdFormats/VBoxContainer/Banner2/HideBanner
 
-onready var Interstitial : Button = $Background/TabContainer/AdFormats/VBoxContainer/Interstitial
-onready var Rewarded : Button = $Background/TabContainer/AdFormats/VBoxContainer/Rewarded
-onready var RewardedInterstitial : Button = $Background/TabContainer/AdFormats/VBoxContainer/RewardedInterstitial
+@onready
+var EnableBanner : Button = $Background/TabContainer/AdFormats/VBoxContainer/Banner/EnableBanner
+@onready
+var DisableBanner : Button = $Background/TabContainer/AdFormats/VBoxContainer/Banner/DisableBanner
+@onready
+var ShowBanner : Button = $Background/TabContainer/AdFormats/VBoxContainer/Banner2/ShowBanner
+@onready
+var HideBanner : Button = $Background/TabContainer/AdFormats/VBoxContainer/Banner2/HideBanner
 
-onready var RequestUserConsent : Button = $Background/TabContainer/UMP/VBoxContainer/RequestUserConsent
-onready var ResetConsentState : Button = $Background/TabContainer/UMP/VBoxContainer/ResetConsentState
+@onready
+var Interstitial : Button = $Background/TabContainer/AdFormats/VBoxContainer/Interstitial
+@onready
+var Rewarded : Button = $Background/TabContainer/AdFormats/VBoxContainer/Rewarded
+@onready
+var RewardedInterstitial : Button = $Background/TabContainer/AdFormats/VBoxContainer/RewardedInterstitial
 
-onready var Advice : RichTextLabel = $Background/Advice
-onready var Music : AudioStreamPlayer = $Music
+@onready
+var RequestUserConsent : Button = $Background/TabContainer/UMP/VBoxContainer/RequestUserConsent
+@onready
+var ResetConsentState : Button = $Background/TabContainer/UMP/VBoxContainer/ResetConsentState
 
-onready var BannerPosition : CheckBox = $Background/TabContainer/Banner/VBoxContainer/Position
-onready var BannerSizes : ItemList = $Background/TabContainer/Banner/VBoxContainer/BannerSizes
+@onready
+var Advice : RichTextLabel = $Background/Advice
+@onready
+var Music : AudioStreamPlayer = $Music
+
+@onready
+var BannerPosition : CheckBox = $Background/TabContainer/Banner/VBoxContainer/Position
+@onready
+var BannerSizes : ItemList = $Background/TabContainer/Banner/VBoxContainer/BannerSizes
 
 func _add_text_Advice_Node(text_value : String):
 	Advice.bbcode_text += text_value + "\n"
 
 func _ready():
-	OS.center_window()
 	Music.play()
 	for banner_size in MobileAds.BANNER_SIZE:
 		BannerSizes.add_item(banner_size)
@@ -30,29 +43,29 @@ func _ready():
 		BannerPosition.pressed = MobileAds.config.banner.position
 		MobileAds.request_user_consent()
 		# warning-ignore:return_value_discarded
-		MobileAds.connect("consent_info_update_failure", self, "_on_MobileAds_consent_info_update_failure")
+		MobileAds.connect("consent_info_update_failure", Callable(self, "_on_MobileAds_consent_info_update_failure"))
 		# warning-ignore:return_value_discarded
-		MobileAds.connect("consent_status_changed", self, "_on_MobileAds_consent_status_changed")
+		MobileAds.connect("consent_status_changed", Callable(self, "_on_MobileAds_consent_status_changed"))
 		# warning-ignore:return_value_discarded
-		MobileAds.connect("banner_loaded", self, "_on_MobileAds_banner_loaded")
+		MobileAds.connect("banner_loaded", Callable(self, "_on_MobileAds_banner_loaded"))
 		# warning-ignore:return_value_discarded
-		MobileAds.connect("banner_destroyed", self, "_on_MobileAds_banner_destroyed")
+		MobileAds.connect("banner_destroyed", Callable(self, "_on_MobileAds_banner_destroyed"))
 		# warning-ignore:return_value_discarded
-		MobileAds.connect("interstitial_loaded", self, "_on_MobileAds_interstitial_loaded")
+		MobileAds.connect("interstitial_loaded", Callable(self, "_on_MobileAds_interstitial_loaded"))
 		# warning-ignore:return_value_discarded
-		MobileAds.connect("interstitial_closed", self, "_on_MobileAds_interstitial_closed")
+		MobileAds.connect("interstitial_closed", Callable(self, "_on_MobileAds_interstitial_closed"))
 		# warning-ignore:return_value_discarded
-		MobileAds.connect("rewarded_ad_loaded", self, "_on_MobileAds_rewarded_ad_loaded")
+		MobileAds.connect("rewarded_ad_loaded", Callable(self, "_on_MobileAds_rewarded_ad_loaded"))
 		# warning-ignore:return_value_discarded
-		MobileAds.connect("rewarded_ad_closed", self, "_on_MobileAds_rewarded_ad_closed")
+		MobileAds.connect("rewarded_ad_closed", Callable(self, "_on_MobileAds_rewarded_ad_closed"))
 		# warning-ignore:return_value_discarded
-		MobileAds.connect("rewarded_interstitial_ad_loaded", self, "_on_MobileAds_rewarded_interstitial_ad_loaded")
+		MobileAds.connect("rewarded_interstitial_ad_loaded", Callable(self, "_on_MobileAds_rewarded_interstitial_ad_loaded"))
 		# warning-ignore:return_value_discarded
-		MobileAds.connect("rewarded_interstitial_ad_closed", self, "_on_MobileAds_rewarded_interstitial_ad_closed")
+		MobileAds.connect("rewarded_interstitial_ad_closed", Callable(self, "_on_MobileAds_rewarded_interstitial_ad_closed"))
 		# warning-ignore:return_value_discarded
-		MobileAds.connect("user_earned_rewarded", self, "_on_MobileAds_user_earned_rewarded")
+		MobileAds.connect("user_earned_rewarded", Callable(self, "_on_MobileAds_user_earned_rewarded"))
 		# warning-ignore:return_value_discarded
-		MobileAds.connect("initialization_complete", self, "_on_MobileAds_initialization_complete")
+		MobileAds.connect("initialization_complete", Callable(self, "_on_MobileAds_initialization_complete"))
 	else:
 		_add_text_Advice_Node("AdMob only works on Android or iOS devices!")
 

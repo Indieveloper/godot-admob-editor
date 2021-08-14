@@ -1,4 +1,4 @@
-extends "util/Signals.gd"
+extends "res://addons/admob/scripts/util/Signals.gd"
 
 func _ready() -> void:
 	load_config()
@@ -7,7 +7,7 @@ func _ready() -> void:
 			_admob_singleton = Engine.get_singleton("AdMob")
 			initialize()
 			# warning-ignore:return_value_discarded
-			get_tree().connect("screen_resized", self, "_on_get_tree_resized")
+			get_tree().connect("screen_resized", Callable(self, "_on_get_tree_resized"))
 
 func get_is_initialized() -> bool:
 	if _admob_singleton:

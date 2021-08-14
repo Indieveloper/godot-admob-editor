@@ -1,25 +1,25 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://bwsjsv3qik6np"]
 
-[ext_resource path="res://addons/admob/develop/Example.gd" type="Script" id=1]
-[ext_resource path="res://addons/admob/assets/icon-500.png" type="Texture" id=2]
-[ext_resource path="res://addons/admob/assets/poing.jpeg" type="Texture" id=3]
-[ext_resource path="res://addons/admob/assets/music.ogg" type="AudioStream" id=4]
+[ext_resource type="Script" path="res://addons/admob/develop/Example.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://d4m117lqxcv0x" path="res://addons/admob/assets/icon-500.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://5u7jhdf075i1" path="res://addons/admob/assets/poing.jpeg" id="3"]
+[ext_resource type="AudioStream" uid="uid://cqoifu8fk26e" path="res://addons/admob/assets/music.ogg" id="4"]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.36377, 0.23226, 0.0795746, 1 )
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.36377, 0.23226, 0.0795746, 1)
 
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="StyleBoxEmpty" id="2"]
 
-[sub_resource type="Theme" id=3]
-TabContainer/styles/panel = SubResource( 2 )
+[sub_resource type="Theme" id="3"]
+TabContainer/styles/panel = SubResource( "2" )
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0, 0, 0, 1 )
+[sub_resource type="StyleBoxFlat" id="4"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Example" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+script = ExtResource( "1" )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -28,7 +28,8 @@ __meta__ = {
 [node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 1, 0.541176, 0, 1 )
+color = Color(1, 0.541176, 0, 1)
+script = null
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -39,11 +40,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -100.0
-margin_top = -100.0
-texture = ExtResource( 3 )
+texture = ExtResource( "3" )
 expand = true
 stretch_mode = 1
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -53,12 +53,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -256.0
-margin_top = -256.0
-margin_right = 256.0
-margin_bottom = 256.0
-texture = ExtResource( 2 )
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+texture = ExtResource( "2" )
 stretch_mode = 6
+script = null
 __meta__ = {
 "_edit_lock_": true
 }
@@ -67,10 +68,13 @@ __meta__ = {
 anchor_top = 0.0933333
 anchor_right = 1.0
 anchor_bottom = 0.402222
-custom_styles/normal = SubResource( 1 )
+theme_override_styles/normal = SubResource( "1" )
 bbcode_enabled = true
 bbcode_text = "[wave]"
 scroll_following = true
+custom_effects = []
+structured_text_bidi_override_options = []
+script = null
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -80,7 +84,8 @@ anchor_left = 0.145
 anchor_top = 0.546667
 anchor_right = 0.855
 anchor_bottom = 0.773333
-theme = SubResource( 3 )
+theme = SubResource( "3" )
+script = null
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -88,126 +93,134 @@ __meta__ = {
 [node name="AdFormats" type="Tabs" parent="Background/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 24.0
+offset_top = 33.0
+script = null
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Background/TabContainer/AdFormats"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Banner" type="HBoxContainer" parent="Background/TabContainer/AdFormats/VBoxContainer"]
-margin_top = 31.0
-margin_right = 355.0
-margin_bottom = 51.0
+offset_top = 19.0
+offset_right = 426.0
+offset_bottom = 48.0
 size_flags_vertical = 0
 alignment = 1
+script = null
 
 [node name="EnableBanner" type="Button" parent="Background/TabContainer/AdFormats/VBoxContainer/Banner"]
-margin_right = 175.0
-margin_bottom = 20.0
+offset_right = 211.0
+offset_bottom = 29.0
 size_flags_horizontal = 3
 disabled = true
 text = "ENABLE BANNER"
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="DisableBanner" type="Button" parent="Background/TabContainer/AdFormats/VBoxContainer/Banner"]
-margin_left = 179.0
-margin_right = 355.0
-margin_bottom = 20.0
+offset_left = 215.0
+offset_right = 426.0
+offset_bottom = 29.0
 size_flags_horizontal = 3
 disabled = true
 text = "DISABLE BANNER"
+script = null
 
 [node name="Banner2" type="HBoxContainer" parent="Background/TabContainer/AdFormats/VBoxContainer"]
-margin_top = 55.0
-margin_right = 355.0
-margin_bottom = 75.0
+offset_top = 52.0
+offset_right = 426.0
+offset_bottom = 81.0
 size_flags_vertical = 0
 alignment = 1
+script = null
 
 [node name="ShowBanner" type="Button" parent="Background/TabContainer/AdFormats/VBoxContainer/Banner2"]
-margin_right = 175.0
-margin_bottom = 20.0
+offset_right = 211.0
+offset_bottom = 29.0
 size_flags_horizontal = 3
 disabled = true
 text = "SHOW BANNER"
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HideBanner" type="Button" parent="Background/TabContainer/AdFormats/VBoxContainer/Banner2"]
-margin_left = 179.0
-margin_right = 355.0
-margin_bottom = 20.0
+offset_left = 215.0
+offset_right = 426.0
+offset_bottom = 29.0
 size_flags_horizontal = 3
 disabled = true
 text = "HIDE BANNER"
+script = null
 
 [node name="Interstitial" type="Button" parent="Background/TabContainer/AdFormats/VBoxContainer"]
-margin_top = 79.0
-margin_right = 355.0
-margin_bottom = 99.0
+offset_top = 85.0
+offset_right = 426.0
+offset_bottom = 114.0
 disabled = true
 text = "INTERSTITIAL"
+script = null
 
 [node name="Rewarded" type="Button" parent="Background/TabContainer/AdFormats/VBoxContainer"]
-margin_top = 103.0
-margin_right = 355.0
-margin_bottom = 123.0
+offset_top = 118.0
+offset_right = 426.0
+offset_bottom = 147.0
 disabled = true
 text = "REWARDED"
+script = null
 
 [node name="RewardedInterstitial" type="Button" parent="Background/TabContainer/AdFormats/VBoxContainer"]
-margin_top = 127.0
-margin_right = 355.0
-margin_bottom = 147.0
+offset_top = 151.0
+offset_right = 426.0
+offset_bottom = 180.0
 disabled = true
 text = "REWARDED INTERSTITIAL"
+script = null
 
 [node name="Banner" type="Tabs" parent="Background/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 24.0
+offset_top = 33.0
+script = null
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Background/TabContainer/Banner"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Control" type="Control" parent="Background/TabContainer/Banner/VBoxContainer"]
-margin_top = 68.0
-margin_right = 355.0
-margin_bottom = 78.0
-rect_min_size = Vector2( 0, 10 )
+rect_min_size = Vector2(0, 10)
+script = null
 
 [node name="Position" type="CheckBox" parent="Background/TabContainer/Banner/VBoxContainer"]
-margin_top = 82.0
-margin_right = 355.0
-margin_bottom = 98.0
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/normal = SubResource( 4 )
+theme_override_styles/hover = SubResource( "4" )
+theme_override_styles/pressed = SubResource( "4" )
+theme_override_styles/normal = SubResource( "4" )
 pressed = true
 text = "Position on TOP"
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BannerSizes" type="ItemList" parent="Background/TabContainer/Banner/VBoxContainer"]
-margin_top = 102.0
-margin_right = 355.0
-margin_bottom = 111.0
+items = []
 auto_height = true
 same_column_width = true
+script = null
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -216,29 +229,27 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 24.0
+offset_top = 33.0
+script = null
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Background/TabContainer/UMP"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RequestUserConsent" type="Button" parent="Background/TabContainer/UMP/VBoxContainer"]
-margin_top = 67.0
-margin_right = 355.0
-margin_bottom = 87.0
 disabled = true
 text = "REQUEST USER CONSENT"
+script = null
 
 [node name="ResetConsentState" type="Button" parent="Background/TabContainer/UMP/VBoxContainer"]
-margin_top = 91.0
-margin_right = 355.0
-margin_bottom = 111.0
 disabled = true
 text = "RESET CONSENT STATE"
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -247,58 +258,51 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 24.0
+offset_top = 33.0
+script = null
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Background/TabContainer/General"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="IsInitialized" type="Button" parent="Background/TabContainer/General/VBoxContainer"]
-margin_top = 31.0
-margin_right = 355.0
-margin_bottom = 51.0
 text = "is_initialized()"
+script = null
 
 [node name="IsBannerLoaded" type="Button" parent="Background/TabContainer/General/VBoxContainer"]
-margin_top = 55.0
-margin_right = 355.0
-margin_bottom = 75.0
 text = "is_banner_loaded()"
+script = null
 
 [node name="IsInterstitialLoaded" type="Button" parent="Background/TabContainer/General/VBoxContainer"]
-margin_top = 79.0
-margin_right = 355.0
-margin_bottom = 99.0
 text = "is_interstitial_loaded()"
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="IsRewardedLoaded" type="Button" parent="Background/TabContainer/General/VBoxContainer"]
-margin_top = 103.0
-margin_right = 355.0
-margin_bottom = 123.0
 text = "is_rewarded_loaded()"
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="IsRewardedInterstitialLoaded" type="Button" parent="Background/TabContainer/General/VBoxContainer"]
-margin_top = 127.0
-margin_right = 355.0
-margin_bottom = 147.0
 text = "is_rewarded_interstitial_loaded()"
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( "4" )
 autoplay = true
+script = null
 
 [connection signal="pressed" from="Background/TabContainer/AdFormats/VBoxContainer/Banner/EnableBanner" to="." method="_on_EnableBanner_pressed"]
 [connection signal="pressed" from="Background/TabContainer/AdFormats/VBoxContainer/Banner/DisableBanner" to="." method="_on_DisableBanner_pressed"]

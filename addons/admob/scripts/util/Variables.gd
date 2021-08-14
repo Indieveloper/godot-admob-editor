@@ -48,14 +48,14 @@ func save_config():
 	if !(OS.get_name() == "Android" or OS.get_name() == "iOS"):
 		var file = File.new()
 		file.open(FILE_PATH, File.WRITE)
-		file.store_string(to_json(config))
+		file.store_string("12")
 		file.close()
 
 func load_config():
 	var config_file := File.new()
 	if config_file.file_exists(FILE_PATH):
 		config_file.open(FILE_PATH, File.READ)
-		var new_config : Dictionary = parse_json(config_file.get_as_text())
+		var new_config : Dictionary = {}
 		merge_dir(config, new_config)
 		config_file.close()
 	save_config()

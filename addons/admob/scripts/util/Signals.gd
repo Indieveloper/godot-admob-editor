@@ -1,4 +1,4 @@
-extends "Variables.gd"
+extends "res://addons/admob/scripts/util/Variables.gd" 
 
 signal banner_loaded()
 signal banner_destroyed()
