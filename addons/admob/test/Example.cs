@@ -96,7 +96,7 @@ public class Example : Control
 			
 			_add_text_Advice_Node("AdMob initialized on C#! With parameters:");
 			_add_text_Advice_Node("is_for_child_directed_treatment: " + ((IDictionary) config["general"])["is_for_child_directed_treatment"].ToString());
-			_add_text_Advice_Node("is_test_europe_user_consent: " + ((IDictionary) config["general"])["is_test_europe_user_consent"].ToString());
+			_add_text_Advice_Node("is_test_europe_user_consent: " + ((IDictionary) config["debug"])["is_test_europe_user_consent"].ToString());
 			_add_text_Advice_Node("max_ad_content_rating: " + ((IDictionary) config["general"])["max_ad_content_rating"].ToString());
 			_add_text_Advice_Node("instance_id: " + GetInstanceId().ToString());
 			EnableBanner.Disabled = false;
